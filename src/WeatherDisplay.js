@@ -19,8 +19,7 @@ const WeatherDisplay = ({ weatherData }) => {
                 <b>Location Name:</b> {weatherData.location.name}
               </ListGroup.Item>
               <ListGroup.Item>
-                <b>Region:</b>
-                {weatherData.location.region}
+                <b>Region:</b> {weatherData.location.region}
               </ListGroup.Item>
               <ListGroup.Item>
                 {" "}
@@ -36,11 +35,11 @@ const WeatherDisplay = ({ weatherData }) => {
               </ListGroup.Item>
               <ListGroup.Item>
                 {" "}
-                <b>Humidity</b> {weatherData.current.humidity}%
+                <b>Humidity:</b> {weatherData.current.humidity}%
               </ListGroup.Item>
               <ListGroup.Item>
                 {" "}
-                <b>Wind Speed</b> {weatherData.current.wind_kph} km/h
+                <b>Wind Speed:</b> {weatherData.current.wind_kph} km/h
               </ListGroup.Item>
               <ListGroup.Item>
                 {" "}
@@ -53,6 +52,5 @@ const WeatherDisplay = ({ weatherData }) => {
     </div>
   );
 };
-
 
 export default WeatherDisplay;
