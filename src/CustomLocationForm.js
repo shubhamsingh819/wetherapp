@@ -12,12 +12,11 @@ const CustomLocationForm = ({ onGetWeather }) => {
   const [newLongitude, setNewLongitude] = useState("");
 
   useEffect(() => {
-    // Check if latitude and longitude are stored in localStorage
+    // Checking if latitude and longitude are stored in localStorage
     const storedLatitude = localStorage.getItem("latitude");
     const storedLongitude = localStorage.getItem("longitude");
 
     if (storedLatitude && storedLongitude) {
-      // If found, set the values in formik and state
       setLatitude(storedLatitude);
       setLongitude(storedLongitude);
     }
@@ -29,7 +28,6 @@ const CustomLocationForm = ({ onGetWeather }) => {
         const currentLatitude = position.coords.latitude.toString();
         const currentLongitude = position.coords.longitude.toString();
 
-        // Set the latitude and longitude in the formik values
         setLatitude(currentLatitude);
         setLongitude(currentLongitude);
         localStorage.setItem("latitude", currentLatitude || newLatitude);
@@ -74,12 +72,12 @@ const CustomLocationForm = ({ onGetWeather }) => {
     <>
       <Toaster position="top-right" reverseOrder={false} />
       <div className="customlocation-main-container">
-        <Form style={{ width: "30%", textAlign: "start", marginTop: "10px" }}>
+        <Form className="customlocation-form">
           <Form.Label className="custom-form-label">
             Whether Info App
           </Form.Label>
           <hr className="line-style" />
-          <Form.Group className="mb-2" controlId="exampleForm.ControlInput1">
+          <Form.Group className="mb-2">
             <Form.Label className="mr-1">Latitude</Form.Label>
             <Form.Control
               className="mb-2"
@@ -89,7 +87,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
               value={latitude || newLatitude}
             />
           </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
+          <Form.Group className="mb-3">
             <Form.Label>Longitude</Form.Label>
             <Form.Control
               type="number"

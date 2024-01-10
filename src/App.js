@@ -33,7 +33,7 @@ const App = () => {
     console.log("sss", savedLatitude, savedLongitude);
 
     if (savedLatitude && savedLongitude) {
-      // Trigger API call with saved values
+      // Triggering API call with saved values
       handleGetWeather(savedLatitude, savedLongitude);
     }
   }, []);
