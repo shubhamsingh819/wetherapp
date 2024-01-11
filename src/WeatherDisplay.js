@@ -14,7 +14,7 @@ const WeatherDisplay = ({ weatherData }) => {
           <div>
             <Card className="weather-card">
               <Card.Header>
-                <b>Weather Information</b>
+                <b>Current Weather Information</b>
               </Card.Header>
               <ListGroup>
                 <ListGroup.Item>
