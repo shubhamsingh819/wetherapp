@@ -22,11 +22,11 @@ const CustomLocationForm = ({ onGetWeather }) => {
     }
   }, []); // Empty dependency array ensures this runs once on mount
 
-  const onSubmit = () => {
+  const getCurrentLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        const currentLatitude = position.coords.latitude.toString();
-        const currentLongitude = position.coords.longitude.toString();
+        const currentLatitude = position.coords.latitude;
+        const currentLongitude = position.coords.longitude;
 
         setLatitude(currentLatitude);
         setLongitude(currentLongitude);
@@ -35,6 +35,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
         toast.success("Latitude and Longitude Fetched Successfully");
       },
       (error) => {
+        toast.error("Error while geeting Latitude and Longitude");
         console.error("Error getting current location:", error.message);
       }
     );
@@ -74,7 +75,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
       <div className="customlocation-main-container">
         <Form className="customlocation-form">
           <Form.Label className="custom-form-label">
-            Whether Info App
+            Weather Info App
           </Form.Label>
           <hr className="line-style" />
           <Form.Group className="mb-2">
@@ -99,7 +100,11 @@ const CustomLocationForm = ({ onGetWeather }) => {
           <Button onClick={handleClear} variant="secondary">
             Clear
           </Button>
-          <Button variant="success" onClick={onSubmit} className="btn-style">
+          <Button
+            variant="success"
+            onClick={getCurrentLocation}
+            className="btn-style"
+          >
             Get Current Location
           </Button>
           <Button
@@ -107,7 +112,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
             onClick={getCurrentWether}
             className="btn-style"
           >
-            Get Current Wether
+            Get Current Weather
           </Button>
         </Form>
       </div>
