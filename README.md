@@ -7,5 +7,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 In the project directory, you can run:
 
 ### `npm start`
+<!-- Hosted Link Given Below -->
 
 `https://live-weather-app-e7ix.vercel.app/`
