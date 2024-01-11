@@ -8,7 +8,7 @@ const WeatherDisplay = ({ weatherData }) => {
   return (
     <>
       <Toaster position="top-right" reverseOrder={false} />
-      <div className="weather-display-main-container">
+      <div className="weather-display">
         {/* Display weather data */}
         {weatherData && (
           <div>

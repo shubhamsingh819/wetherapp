@@ -39,7 +39,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="main-container">
       <CustomLocationForm onGetWeather={handleGetWeather} />
       <WeatherDisplay weatherData={weatherData} />
     </div>

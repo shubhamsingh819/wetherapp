@@ -56,7 +56,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
     } else {
       localStorage.setItem("latitude", latitude || newLatitude);
       localStorage.setItem("longitude", longitude || newLongitude);
-      toast.success("wether info fethed Successfully");
+      toast.success("weather info fethed Successfully");
       onGetWeather(latitude || newLatitude, longitude || newLatitude);
     }
   };
@@ -97,23 +97,21 @@ const CustomLocationForm = ({ onGetWeather }) => {
               value={longitude || newLongitude}
             />
           </Form.Group>
-          <Button onClick={handleClear} variant="secondary">
-            Clear
-          </Button>
-          <Button
-            variant="success"
-            onClick={getCurrentLocation}
-            className="btn-style"
-          >
-            Get Current Location
-          </Button>
-          <Button
-            variant="info"
-            onClick={getCurrentWether}
-            className="btn-style"
-          >
-            Get Current Weather
-          </Button>
+          <div>
+            <Button onClick={handleClear} variant="secondary" className="mb-2">
+              Clear
+            </Button>{" "}
+            <Button
+              variant="success"
+              onClick={getCurrentLocation}
+              className="mb-2"
+            >
+              Get Current Location
+            </Button>{" "}
+            <Button variant="info" onClick={getCurrentWether} className="mb-2">
+              Get Current Weather
+            </Button>
+          </div>
         </Form>
       </div>
     </>

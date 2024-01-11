@@ -8,7 +8,7 @@
   margin-top: 10px;
 }
 
-.weather-display-main-container {
+.weather-display {
   display: flex;
   justify-content: center;
 }
@@ -18,17 +18,35 @@
   margin-top: 15px;
 }
 
+@media (max-width: 767px) {
+  .weather-card {
+    width: auto;
+  }
+}
+
 .custom-form-label {
   text-align: center;
   font-weight: bold;
-  margin-left: 140px;
+  color: white;
+  margin-left: 100px;
+}
+
+@media (max-width: 767px) {
+  .weather-card {
+    text-align: center;
+    font-weight: bold;
+    color: white;
+  }
 }
 
 .line-style {
-  border-top: 5px solid black;
+  border-top: 5px solid white;
   margin-top: 10px;
 }
 
-.btn-style {
-  margin-left: 10px;
+.main-container {
+  background: url("https://ik.imagekit.io/d5scjfbjc/index_0nNrywa8ul.svg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
 }
