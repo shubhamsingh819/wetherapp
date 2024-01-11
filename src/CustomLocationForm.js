@@ -79,7 +79,9 @@ const CustomLocationForm = ({ onGetWeather }) => {
           </Form.Label>
           <hr className="line-style" />
           <Form.Group className="mb-2">
-            <Form.Label className="mr-1">Latitude</Form.Label>
+            <Form.Label className="mr-1" style={{ color: "white" }}>
+              Latitude
+            </Form.Label>
             <Form.Control
               className="mb-2"
               type="number"
@@ -89,7 +91,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
             />
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Longitude</Form.Label>
+            <Form.Label style={{ color: "white" }}>Longitude</Form.Label>
             <Form.Control
               type="number"
               placeholder="Enter Longitude"
