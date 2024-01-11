@@ -35,7 +35,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
         toast.success("Latitude and Longitude Fetched Successfully");
       },
       (error) => {
-        toast.error("Error while geeting Latitude and Longitude");
+        toast.error("Error while getting Latitude and Longitude");
         console.error("Error getting current location:", error.message);
       }
     );
@@ -87,7 +87,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
               type="number"
               placeholder="Enter Latitude"
               onChange={handleLatitudeChange}
-              value={latitude || newLatitude}
+              value={newLatitude || latitude}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -96,7 +96,7 @@ const CustomLocationForm = ({ onGetWeather }) => {
               type="number"
               placeholder="Enter Longitude"
               onChange={handleLongitudeChange}
-              value={longitude || newLongitude}
+              value={newLongitude || longitude}
             />
           </Form.Group>
           <div>

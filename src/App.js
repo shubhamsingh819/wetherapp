@@ -5,18 +5,16 @@ import WeatherDisplay from "./WeatherDisplay";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
-
   const handleGetWeather = async (latitude, longitude) => {
     console.log(latitude, longitude, "ddd");
     try {
-      const weatherApiUrl = `https://weatherapi-com.p.rapidapi.com/current.json?q=${latitude},${longitude}`;
+      const weatherApiUrl = `${process.env.REACT_APP_WEATHER_API_URL}${latitude},${longitude}`;
 
       const response = await fetch(weatherApiUrl, {
         method: "GET",
         headers: {
-          "X-RapidAPI-Key":
-            "677fa8ef55msh12c799620d55df4p13296djsn3a8a9901fac2",
-          "X-RapidAPI-Host": "weatherapi-com.p.rapidapi.com",
+          "X-RapidAPI-Key": process.env.REACT_APP_API_KEY,
+          "X-RapidAPI-Host": process.env.REACT_APP_WEATHER_HOST,
         },
       });
       const data = await response.json();
