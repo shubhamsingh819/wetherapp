@@ -48,5 +48,6 @@
   background: url("https://ik.imagekit.io/d5scjfbjc/index_0nNrywa8ul.svg");
   background-size: cover;
   background-position: center;
-  height: 100%;
+  width: 100%;
+  height: 690px;
 }
